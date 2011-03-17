@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="resources/styles.css" />
+<link rel="stylesheet" href="content/css/styles.css" />
+<title>Groovy/Scala Comparison</title>
+</head>
+<body>
+<header>
+    <h1>Groovy/Scala Comparison</h1>
+    <nav>
+        <ul>
+            <li><button id="prev-btn" title="Previous slide">Previous Slide</button></li>
+            <li><span id="slide-number"></span><span id="slide-total"></span></li>
+            <li><button id="next-btn" title="Next Slide">Next Slide</button></li>
+        </ul>
+    </nav>
+</header>
+<div id="deck">
+	<!--
+	<section>
+		<hgroup>
+	  	<h1>Hello World!</h1>
+	  </hgroup>
+		<div class="scala codeexample">
+			<h2>Scala</h2>
+			<pre class="textmate-source wombat">
+			
+			</pre>
+		</div>
+		<div class="groovy codeexample">
+			<h2>Groovy</h2>
+			<pre class="textmate-source wombat">
+			
+			</pre>
+		</div>
+	</section>
+	-->
+	
+	
+	<section>
+		<center>
+		<hgroup>
+	  	<h1>Java language is old, but...</h1>
+			<h2>where to run?</h2>
+	  </hgroup>
+		<br/>
+		<br/>
+		<p>Eduardo Rebola</p>
+		<p>Lucas Torri</p>
+	</center>
+	</section>
+	
+
+	<section>
+		<hgroup>
+	  	<h1>What's up?</h1>
+	  </hgroup>
+		<li class="action"> I can't stand the Java language verbosity...
+		<li class="action"> But the JVM still rocks, right?
+		<li class="action"> What great options are over there?
+		<li class="action"> Ever heard of Groovy and Scala?
+	</section>
+	
+	
+	
+	<section>
+		<hgroup>
+			<h1>What we are going to show?</h1>
+	  </hgroup>
+		<li class="action"> The basics from both languages
+		<li class="action"> ... which basically shows why they are so cool
+	</section>
+	
+	<!--
+		TODO
+		call-by-name
+		currying
+		for comprehensions
+		
+		
+		
+		http://stackoverflow.com/questions/711913/what-are-the-key-differences-between-scala-and-groovy
+		http://stronglytypedblog.blogspot.com/2009/07/java-vs-scala-vs-groovy-performance.html
+	-->
+
+
+	<section>
+		<hgroup>
+	  	<h1>Background/Features</h1>
+	  </hgroup>
+		<div class="scala codeexample">
+			<div class="action">
+			<h2>Scala</h2>
+			<li> Static typed
+			<li> Provide seamless integration with Java and .NET
+			</div>
+		</div>
+		<div class="groovy codeexample">
+			<div class="action">
+			<h2>Groovy</h2>
+			<li> Supports dynamic meta-programming
+			<li> Provide seamless integration with Java
+			</div>
+		</div>
+		<div class="action">
+			<h2>Both</h2>
+			<li> Strong typed
+			<li> Have @nnotations
+			<li> Have mixins
+			<li> Have abstract types and polymorphic methods
+		</div>
+	</section>
+	
+	
+	
+	
+	<section>
+        <hgroup>
+            <h1>Hello World!</h1>
+        </hgroup>
+<div class="scala codeexample">
+	<h2>Scala</h2>
+<pre class="textmate-source wombat"><span class="source source_scala"><span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> in a script
+</span>println(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"We want a shrubbery!!"</span>)
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> as an application entry point
+</span><span class="keyword keyword_declaration keyword_declaration_scala">object</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">HelloWorld</span> {
+    <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">main</span>(<span class="variable variable_parameter">args</span>: <span class="entity entity_name entity_name_class">Array</span>[<span class="entity entity_name entity_name_class">String</span>]) {
+        println(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"We want a shrubbery!!"</span>)
+    }
+}
+</pre>
+</div>
+  <div class="groovy codeexample">
+		<h2>Groovy</h2>
+    <pre class="textmate-source wombat"><span class="source source_groovy"><span class="comment comment_line comment_line_double-slash comment_line_double-slash_groovy"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_groovy">//</span> in a script</span>
+<span class="support support_function support_function_print support_function_print_groovy">println</span> <span class="string string_quoted string_quoted_double string_quoted_double_groovy"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_groovy">"</span>We want a shrubbery!!<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_groovy">"</span></span></span>
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> as an application entry point
+</span><span class="source source_groovy"><span class="meta meta_definition meta_definition_class meta_definition_class_groovy"><span class="meta meta_class meta_class_identifier meta_class_identifier_groovy"><span class="storage storage_modifier storage_modifier_groovy">class</span> <span class="entity entity_name entity_name_type entity_name_type_class entity_name_type_class_groovy">HelloWorld</span></span> <span class="meta meta_class meta_class_body meta_class_body_groovy">{
+<span class="meta meta_definition meta_definition_method meta_definition_method_groovy">    <span class="storage storage_modifier storage_modifier_static storage_modifier_static_groovy">static</span> <span class="meta meta_method meta_method_return-type meta_method_return-type_java"><span class="storage storage_type storage_type_primitive storage_type_primitive_groovy">void</span> </span><span class="meta meta_definition meta_definition_method meta_definition_method_signature meta_definition_method_signature_java"><span class="entity entity_name entity_name_function entity_name_function_java">main</span>(<span class="meta meta_method meta_method_parameters meta_method_parameters_groovy"><span class="meta meta_method meta_method_parameter meta_method_parameter_groovy"><span class="storage storage_type storage_type_object storage_type_object_array storage_type_object_array_groovy">String</span>[] <span class="variable variable_parameter variable_parameter_method variable_parameter_method_groovy">args</span></span></span>)</span> <span class="meta meta_method meta_method_body meta_method_body_java">{
+        <span class="support support_function support_function_print support_function_print_groovy">println</span> <span class="string string_quoted string_quoted_double string_quoted_double_groovy"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_groovy">"</span>We want a shrubbery!!<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_groovy">"</span></span>
+    </span>}</span>
+</span><span class="punctuation punctuation_section punctuation_section_class punctuation_section_class_end punctuation_section_class_end_groovy">}</span></span></span></pre>
+  </div>
+    </section>
+
+
+
+
+
+			<section>
+				<hgroup>
+			  	<h1>Basic Syntax</h1>
+			  </hgroup>
+				<div class="scala codeexample">
+					<h2>Scala</h2>
+						<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> def to define functions/methods
+</span><span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">isAWitch</span>(<span class="variable variable_parameter">herWeight</span>: <span class="entity entity_name entity_name_class">Double</span>, <span class="variable variable_parameter">duckWeight</span>: <span class="entity entity_name entity_name_class">Double</span>) =
+    	                          herWeight == duckWeight
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> [] instead of &lt;&gt;
+</span><span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">roundTableKnights</span> = <span class="entity entity_name entity_name_class">List</span>[<span class="entity entity_name entity_name_class">String</span>]<span class="meta meta_parentheses meta_parentheses_scala">()</span>
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> Scala's == != Java's ==
+</span><span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">Knight</span>(<span class="variable variable_parameter">name</span>: <span class="entity entity_name entity_name_class">String</span>)
+<span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">k1</span> = <span class="keyword">new</span> <span class="entity entity_name entity_name_class">Knight</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Galahad"</span>)
+<span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">k2</span> = <span class="keyword">new</span> <span class="entity entity_name entity_name_class">Knight</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Galahad"</span>)
+k1 == k2 <span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> true
+</span>k1 eq k2 <span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> false
+</span>
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> no handled exceptions
+</span><span class="keyword keyword_control keyword_control_flow keyword_control_flow_jump keyword_control_flow_jump_scala">throw</span> <span class="keyword">new</span> <span class="entity entity_name entity_name_class">Exception</span></span>
+
+<span class="comment comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> you cannot change vals, only vars
+</span><span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">question</span> = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"What... is the Airspeed Velocity of an Unladen Swallow?"</span>
+question = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"What do you mean? An African or European swallow?"</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">speedOfASwallow</span> = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"unknown"</span>
+speedOfASwallow = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"11ms"</span> <span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> error: reassignment to val</span></span></pre>
+				</div>
+				<div class="groovy codeexample">
+					<h2>Groovy</h2>
+					<pre class="textmate-source wombat">
+
+					</pre>
+				</div>
+			</section>
+
+
+
+
+
+
+		<section>
+			<hgroup>
+		  	<h1>Basic Types</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">byte</span>: <span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Byte</span> = <span class="constant constant_numeric constant_numeric_scala">0x01</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">char</span> = <span class="constant constant_character constant_character_literal constant_character_literal_scala">'a'</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">short</span>: <span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Short</span> = <span class="constant constant_numeric constant_numeric_scala">1</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">int</span> = <span class="constant constant_numeric constant_numeric_scala">10</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">long</span>: <span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Long</span> = <span class="constant constant_numeric constant_numeric_scala">1000000000l</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">float</span> = <span class="constant constant_numeric constant_numeric_scala">3.14f</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">double</span> = <span class="constant constant_numeric constant_numeric_scala">4.13566733e-15</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">symbol</span> = <span class="entity entity_name entity_name_symbol">'symbol</span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">str</span> = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"string"</span>
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">mlstr</span> = <span class="string string_quoted string_quoted_triple string_quoted_triple_scala">"""multi
+               line"""</span></span>
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">tuple</span> = (<span class="constant constant_numeric constant_numeric_scala">1</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"tuple"</span>)</span>
+</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+
+			</div>
+		</section>
+		
+		
+		
+		<section>
+			<hgroup>
+		  	<h1>Basic Collections</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">aList</span> = <span class="entity entity_name entity_name_class">List</span>(<span class="constant constant_numeric constant_numeric_scala">1</span>, <span class="constant constant_numeric constant_numeric_scala">2</span>, <span class="constant constant_numeric constant_numeric_scala">3</span>)
+<span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">sameList</span> = <span class="constant constant_numeric constant_numeric_scala">1</span> :: <span class="constant constant_numeric constant_numeric_scala">2</span> :: <span class="constant constant_numeric constant_numeric_scala">3</span> :: <span class="constant constant_language constant_language_scala">Nil</span>
+
+aList(<span class="constant constant_numeric constant_numeric_scala">0</span>) <span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> 1
+</span>
+<span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">aMap</span> = <span class="entity entity_name entity_name_class">Map</span>(<span class="constant constant_numeric constant_numeric_scala">1</span> -&gt; <span class="string string_quoted string_quoted_double string_quoted_double_scala">"a"</span>, <span class="constant constant_numeric constant_numeric_scala">2</span> -&gt; <span class="string string_quoted string_quoted_double string_quoted_double_scala">"b"</span>, <span class="constant constant_numeric constant_numeric_scala">3</span> -&gt; <span class="string string_quoted string_quoted_double string_quoted_double_scala">"c"</span>)
+
+<span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">anArray</span> = <span class="entity entity_name entity_name_class">Array</span>(<span class="constant constant_numeric constant_numeric_scala">1</span>, <span class="constant constant_numeric constant_numeric_scala">2</span>, <span class="constant constant_numeric constant_numeric_scala">3</span>)
+
+<span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">aSet</span> = <span class="entity entity_name entity_name_class">Set</span>(<span class="constant constant_numeric constant_numeric_scala">1</span>, <span class="constant constant_numeric constant_numeric_scala">2</span>, <span class="constant constant_numeric constant_numeric_scala">3</span>)
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> and also Vector, Queue, Stack, LinkedList, and many more
+</span></span>
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+		
+		
+		
+		
+		<section>
+			<hgroup>
+		  	<h1>Named and Default Params</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">weAreTheKnightsWhoSay</span>(<span class="variable variable_parameter">what</span>: <span class="entity entity_name entity_name_class">String</span> = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Ni"</span>) = 
+    println(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"We are the Knights Who Say "</span> + what)
+
+weAreTheKnightsWhoSay<span class="meta meta_parentheses meta_parentheses_scala">()</span>
+weAreTheKnightsWhoSay(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Ecky-ecky-ecky-ecky-pikang..."</span>)
+weAreTheKnightsWhoSay(what = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Noo"</span>)</span>
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+
+
+
+
+		<section>
+			<hgroup>
+		  	<h1>Classes and Stuff</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> mixins: like interfaces, but with implementation
+</span><span class="keyword keyword_declaration keyword_declaration_scala">trait</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">SacredRelic</span>
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> single instance of a type
+</span><span class="keyword keyword_declaration keyword_declaration_scala">object</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">HolyGrail</span> <span class="keyword keyword_declaration keyword_declaration_scala">extends</span> <span class="entity entity_other entity_other_inherited-class entity_other_inherited-class_scala">SacredRelic</span>
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> yeah, you know...
+</span><span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">Witch</span>(<span class="variable variable_parameter">name</span>: <span class="entity entity_name entity_name_class">String</span>)
+
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> a class with lots of code generated by the compiler
+</span><span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">Knight</span>(<span class="variable variable_parameter">name</span>: <span class="entity entity_name entity_name_class">String</span>)</span>
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+		
+		
+		
+		<section>
+			<hgroup>
+		  	<h1>Constructors</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">King</span>(<span class="variable variable_parameter">name</span>: <span class="entity entity_name entity_name_class">String</span>, <span class="variable variable_parameter">title</span>: <span class="entity entity_name entity_name_class">String</span>)
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">arthur</span> = <span class="keyword">new</span> <span class="entity entity_name entity_name_class">King</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Arthur"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"King of the Britons"</span>)
+arthur.name <span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> error: value name is not a member of King
+</span>
+<span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">King</span>(<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">name</span>: <span class="entity entity_name entity_name_class">String</span>, <span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">title</span>: <span class="entity entity_name entity_name_class">String</span>)
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">arthur</span> = <span class="keyword">new</span> <span class="entity entity_name entity_name_class">King</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Arthur"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"King of the Britons"</span>)
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">kingOfTheWho</span> = arthur.title
+
+<span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">King</span>(<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">name</span>: <span class="entity entity_name entity_name_class">String</span>, <span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">title</span>: <span class="entity entity_name entity_name_class">String</span>) {
+    <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">this</span>(<span class="variable variable_parameter">nameAndTitle</span>: <span class="entity entity_name entity_name_class">String</span>) = 
+	<span class="variable variable_language variable_language_scala">this</span>(nameAndTitle.split(<span class="string string_quoted string_quoted_double string_quoted_double_scala">", "</span>)(<span class="constant constant_numeric constant_numeric_scala">0</span>), nameAndTitle.split(<span class="string string_quoted string_quoted_double string_quoted_double_scala">", "</span>)(<span class="constant constant_numeric constant_numeric_scala">1</span>))
+}
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">arthur</span> = <span class="keyword">new</span> <span class="entity entity_name entity_name_class">King</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Arthur, King of the Britons"</span>)
+</span>
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+		
+		
+		
+		<section>
+			<hgroup>
+		  	<h1>Getters and Setters</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">Guard</span>(<span class="variable variable_parameter">nationality</span>: <span class="entity entity_name entity_name_class">String</span>)
+<span class="keyword keyword_declaration keyword_declaration_scala">object</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">RuizDeLuLaRamperCastle</span> {
+    <span class="storage storage_modifier storage_modifier_access">private</span> <span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">_guard</span>: <span class="entity entity_name entity_name_class">Guard</span> = _
+    <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">guard</span> = _guard
+    <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">guard_</span>=(<span class="variable variable_parameter">guard</span>: <span class="entity entity_name entity_name_class">Guard</span>): <span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Unit</span> = guard <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">match</span> {
+        <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="entity entity_name entity_name_class">Guard</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"French"</span>) =&gt; _guard = guard
+        <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> _ =&gt; error(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"This guard is not french"</span>)
+    }
+}
+
+<span class="entity entity_name entity_name_class">RuizDeLuLaRamperCastle</span>.guard = <span class="entity entity_name entity_name_class">Guard</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"French"</span>)
+
+<span class="entity entity_name entity_name_class">RuizDeLuLaRamperCastle</span>.guard = <span class="entity entity_name entity_name_class">Guard</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Brazilian"</span>)
+<span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> error: This guard is not french</span></span>
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+
+
+
+		<section>
+			<hgroup>
+		  	<h1>Closures</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">sirs</span> = <span class="entity entity_name entity_name_class">List</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Bedemir"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Galahad"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Lancelot"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Robin"</span>)
+
+sirs.foreach { k =&gt;
+    println(k)
+}
+
+<span class="source source_scala">sirs.filter(_.startsWith(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"L"</span>))</span>
+
+<span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">doSomething</span>(<span class="variable variable_parameter">s</span>: <span class="entity entity_name entity_name_class">String</span>) = s.toUpperCase
+sirs.map(doSomething)</span>
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+
+		
+
+		<section>
+			<hgroup>
+		  	<h1>Pimpins</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="meta meta_import meta_import_scala"><span class="keyword keyword_other keyword_other_import keyword_other_import_scala">import</span> <span class="variable variable_package variable_package_scala">java.util.</span><span class="variable variable_import variable_import_scala">Calendar
+</span></span><span class="meta meta_import meta_import_scala"><span class="keyword keyword_other keyword_other_import keyword_other_import_scala">import</span> <span class="variable variable_package variable_package_scala">java.util.</span><span class="variable variable_import variable_import_scala">Date
+</span></span><span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">IntPlus</span>(<span class="variable variable_parameter">i</span>: <span class="entity entity_name entity_name_class">Int</span>) {
+    <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">weeks</span> = i * <span class="constant constant_numeric constant_numeric_scala">7</span>
+    <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">ago</span>: <span class="entity entity_name entity_name_class">Date</span> = {
+        <span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">cal</span> = <span class="entity entity_name entity_name_class">Calendar</span>.getInstance
+        cal.add(<span class="entity entity_name entity_name_class">Calendar</span>.<span class="entity entity_name entity_name_class">DATE</span>, -i)
+        cal.getTime
+    }
+}
+<span class="storage storage_modifier storage_modifier_other">implicit</span> <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">int2IntPlus</span>(<span class="variable variable_parameter">i</span>: <span class="entity entity_name entity_name_class">Int</span>) = <span class="keyword">new</span> <span class="entity entity_name entity_name_class">IntPlus</span>(i)
+
+<span class="constant constant_numeric constant_numeric_scala">2.</span>weeks.ago</span>
+<span class="source source_scala"><span class="comment comment_line comment_line_double-slash comment_line_double-slash_scala"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_scala">//</span> java.util.Date = Fri Feb 25 12:32:34 BRT 2011</span></span>
+
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">ElvisOperator</span>[<span class="entity entity_name entity_name_class">T</span> &lt;: <span class="entity entity_name entity_name_class">AnyRef</span>](<span class="variable variable_parameter">other</span>: =&gt; <span class="entity entity_name entity_name_class">T</span>) {
+    <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">?</span>:(<span class="variable variable_parameter">it</span>: <span class="entity entity_name entity_name_class">T</span>): <span class="entity entity_name entity_name_class">T</span> = <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">if</span> (other == <span class="constant constant_language constant_language_scala">null</span>) other <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">else</span> it
+}
+<span class="storage storage_modifier storage_modifier_other">implicit</span> <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">anyRef2ElvisOperator</span>[<span class="entity entity_name entity_name_class">T</span> &lt;: <span class="entity entity_name entity_name_class">AnyRef</span>](<span class="variable variable_parameter">a</span>: =&gt; <span class="entity entity_name entity_name_class">T</span>) = <span class="keyword">new</span> <span class="entity entity_name entity_name_class">ElvisOperator</span>(a)
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+
+
+
+		<section>
+			<hgroup>
+		  	<h1>Duck Typing</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_scala">type</span> <span class="entity entity_name entity_name_type entity_name_type_declaration">Greeter</span> = { <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">hello</span>: <span class="entity entity_name entity_name_class">String</span> }
+
+<span class="keyword keyword_declaration keyword_declaration_scala">object</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">HappyGreeter</span> { <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">hello</span> = <span class="string string_quoted string_quoted_double string_quoted_double_scala">"HELLLOOOOOOO!!!!!"</span> }
+<span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">printgreet</span>(<span class="variable variable_parameter">g</span>: <span class="entity entity_name entity_name_class">Greeter</span>) = println(g.hello)
+
+printgreet(<span class="entity entity_name entity_name_class">HappyGreeter</span>)</span>
+				</pre>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<pre class="textmate-source wombat">
+
+				</pre>
+			</div>
+		</section>
+
+
+
+
+		<section>
+			<hgroup>
+		  	<h1>Tail recursion</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="meta meta_import meta_import_scala"><span class="keyword keyword_other keyword_other_import keyword_other_import_scala">import</span> <span class="variable variable_package variable_package_scala">scala.annotation.</span><span class="variable variable_import variable_import_scala">tailrec
+</span></span>@tailrec <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">loop</span>: <span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Unit</span> = loop
+
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">streamcopy</span>(<span class="variable variable_parameter">in</span>: <span class="entity entity_name entity_name_class">InputStream</span>, <span class="variable variable_parameter">out</span>: <span class="entity entity_name entity_name_class">OutputStream</span>, <span class="variable variable_parameter">buf</span>: <span class="entity entity_name entity_name_class">Array</span>[<span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Byte</span>]) {
+    @tailrec <span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">read</span>(<span class="variable variable_parameter">len</span>: <span class="entity entity_name entity_name_class">Int</span>): <span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Unit</span> = <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">if</span> (len &gt; <span class="constant constant_numeric constant_numeric_scala">0</span>) {
+        out.write(buf, <span class="constant constant_numeric constant_numeric_scala">0</span>, len)
+        read(in.read(buf))
+    }
+    read(in.read(buf))
+}</span>
+				</pre>
+			</div>
+		</section>
+
+
+
+		<section>
+			<hgroup>
+		  	<h1>XML Integration</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_volatile keyword_declaration_volatile_scala">var</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">sirs</span> = <span class="entity entity_name entity_name_class">List</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Bedemir"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Galahad"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Lancelot"</span>, <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Robin"</span>)
+
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">xml</span> = &lt;montyPython&gt;
+    { <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">for</span>(sir &lt;- sirs) <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">yield</span> &lt;sir&gt;{sir}&lt;/sir&gt; }
+&lt;/montyPython&gt;</span>
+				</pre>
+			</div>
+		</section>
+
+
+
+		<section>
+			<hgroup>
+		  	<h1>Pattern Matching</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<pre class="textmate-source wombat">
+<span class="source source_scala"><span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="keyword keyword_declaration keyword_declaration_scala">class</span> <span class="entity entity_name entity_name_class entity_name_class_declaration">Witch</span>(<span class="variable variable_parameter">name</span>: <span class="entity entity_name entity_name_class">String</span>)
+<span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">KnightWhoSayRE</span> = <span class="string string_quoted string_quoted_triple string_quoted_triple_scala">"""^Knights Who Say (.*)"""</span>.r
+<span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">findFromTheMovie</span>(<span class="variable variable_parameter">a</span>: <span class="entity entity_name entity_name_class">Any</span>) = a <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">match</span> {
+    <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Bedemir"</span> | <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Galahad"</span> | <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Lancelot"</span> | <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Robin"</span> =&gt; 
+        <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Found a Knight"</span>
+    <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="entity entity_name entity_name_class">Witch</span>(name) =&gt; 
+        <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Found a Witch named "</span> + name
+    <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="entity entity_name entity_name_class">KnightWhoSayRE</span>(what) =&gt; 
+        <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Found the Knights Who Say "</span> + what
+    <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> <span class="variable variable_parameter">i</span>: <span class="entity entity_name entity_name_class">Int</span> <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">if</span> i &gt; <span class="constant constant_numeric constant_numeric_scala">0</span> =&gt; 
+        <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Found the speed of a swallow"</span>
+    <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> &lt;montyPython&gt;{sirs @ _*}&lt;/montyPython&gt; =&gt; 
+        <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Found a montyPython XML"</span>
+    <span class="keyword keyword_control keyword_control_flow keyword_control_flow_scala">case</span> _ =&gt; 
+        <span class="string string_quoted string_quoted_double string_quoted_double_scala">"Found nothing"</span>
+}
+
+findFromTheMovie(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"Robin"</span>)
+findFromTheMovie(<span class="entity entity_name entity_name_class">Witch</span>(<span class="string string_quoted string_quoted_double string_quoted_double_scala">"a witch"</span>))
+				</pre>
+			</div>
+		</section>
+		
+		
+		
+		
+		<section>
+			<hgroup>
+		  	<h1>References</h1>
+		  </hgroup>
+			<div class="scala codeexample">
+				<h2>Scala</h2>
+				<li><a href="http://www.scala-lang.org/">Scala Language</a>
+				<li><a href="http://programming-scala.labs.oreilly.com/">Programming Scala</a>
+			</div>
+			<div class="groovy codeexample">
+				<h2>Groovy</h2>
+				<li>
+				<li>
+			</div>
+			<h2>Slides</h2>
+			<li> <a href="http://github.com/robflaherty/html-slideshow">Lightweight HTML5-based slideshow</a>
+		</section>
+		
+
+
+
+</div>
+<!-- /deck -->
+<script src="resources/jquery-1.4.2.min.js"></script>
+<script src="resources/htmlSlides.js"></script>
+<script>
+//This is just to demo the custom events
+$('html').bind('newSlide', function(e,id) { console.log('New slide event, slide number ' + id)});
+$('html').bind('newAction', function(e,id) { console.log('New action event, action number ' + id)});
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+@font-face {
+	font-family: 'ChunkFiveRegular';
+	src: url('../fonts/Chunkfive-webfont.eot');
+	src: local('☺'), url('../fonts/Chunkfive-webfont.woff') format('woff'), url('../fonts/Chunkfive-webfont.ttf') format('truetype'), url('../fonts/Chunkfive-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{ background:#333333; }
+#deck h1 { color: #f5f6f6; font-family: 'ChunkFiveRegular', Arial; font-size:50px; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2); }
+#deck h2 { color: #f5f6f6; font-family: 'ChunkFiveRegular', Arial; font-size: 30px; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2); }
+#deck a, #deck p, #deck li { color: #f5f6f6; font-family: 'Calibri'; font-size:20px; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2); }
+
+pre.textmate-source {
+	margin: 0;
+	padding: 0 0 0 2px;
+	font-family: Monaco, monospace;
+	font-size: 14px;
+	line-height: 1.3em;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
+}
+
+pre.textmate-source.wombat {
+	color: #F6F3E8;
+	background-color: #333333;
+}
+
+pre.textmate-source .linenum {
+	width: 75px;
+	padding: 0.1em 1em 0.2em 0;
+	color: #888;
+	background-color: #eee;
+}
+pre.textmate-source.wombat span {
+   padding-top: 0.2em;
+   padding-bottom: 0.1em;
+}
+pre.textmate-source.wombat ::selection {
+	background-color: #444444;
+}
+/* Comment */
+pre.textmate-source.wombat .comment {
+	color: #99968B;
+	font-style: italic;
+}
+
+/* Directive */
+pre.textmate-source.wombat .keyword_other_directive {
+	font-weight: bold;
+}
+
+/* Line-number directives */
+pre.textmate-source.wombat .keyword_other_directive_line-number {
+	text-decoration: underline;
+}
+
+/* Characters */
+pre.textmate-source.wombat .constant_character {
+	color: #95E454;
+	font-style: italic;
+}
+
+/* String */
+pre.textmate-source.wombat .string {
+	color: #95E454;
+	font-style: italic;
+}
+
+/* Number */
+pre.textmate-source.wombat .constant_numeric {
+	color: #E5786D;
+}
+
+/* Built-in constant */
+pre.textmate-source.wombat .constant_language {
+	color: #E5786D;
+}
+
+/* User-defined constant */
+pre.textmate-source.wombat .constant_character, pre.textmate-source.wombat .constant_other {
+	color: #E5786D;
+}
+
+/* Variable */
+pre.textmate-source.wombat .variable_parameter, pre.textmate-source.wombat .variable_other {
+	color: #CAE682;
+}
+
+/* Language Keyword */
+pre.textmate-source.wombat .keyword {
+	color: #8AC6F2;
+}
+
+/* Module Keyword */
+pre.textmate-source.wombat .entity_name_module, pre.textmate-source.wombat . .support_other_module {
+	color: #8AC6F2;
+}
+
+/* Operators */
+pre.textmate-source.wombat .keyword_operator {
+	color: #F6F3E8;
+}
+
+/* Floating-point infix operators */
+pre.textmate-source.wombat .source_ocaml .keyword_operator_symbol_infix_floating-point {
+	text-decoration: underline;
+}
+
+/* Floating-point prefix operators */
+pre.textmate-source.wombat .source_ocaml .keyword_operator_symbol_prefix_floating-point {
+	text-decoration: underline;
+}
+
+/* Storage Types */
+pre.textmate-source.wombat .storage_type {
+	color: #CAE682;
+}
+
+/* Variant Types */
+pre.textmate-source.wombat .entity_name_class_variant {
+	color: #CAE682;
+}
+
+/* Storage */
+pre.textmate-source.wombat .storage {
+	color: #CAE682;
+}
+
+/* Type name */
+pre.textmate-source.wombat .entity_name_type {
+	color: #CAE682;
+}
+
+/* Inherited class */
+pre.textmate-source.wombat .entity_other_inherited-class {
+	color: #CAE682;
+}
+
+/* Function name */
+pre.textmate-source.wombat .entity_name_function {
+	color: #CAE682;
+}
+
+/* Type name */
+pre.textmate-source.wombat .storage_type_user-defined {
+	color: #CAE682;
+}
+
+/* Class type name */
+pre.textmate-source.wombat .entity_name_type_class_type {
+	color: #CAE682;
+	background-color: #242424;
+}
+
+/* Function argument */
+pre.textmate-source.wombat .variable_parameter {
+	font-style: italic;
+}
+
+/* Tag name */
+pre.textmate-source.wombat .entity_name_tag {
+	color: #8AC6F2;
+}
+
+/* Tag definition */
+pre.textmate-source.wombat .punctuation_definition_tag {
+	color: #CAE682;
+}
+
+/* Tag attribute */
+pre.textmate-source.wombat .entity_other_attribute-name {
+	color: #CAE682;
+}
+
+/* Library function */
+pre.textmate-source.wombat .support_function {
+	color: #CAE682;
+}
+
+/* Library constant */
+pre.textmate-source.wombat .support_constant {
+	color: #E5786D;
+}
+
+/* Library class/type */
+pre.textmate-source.wombat .support_type, pre.textmate-source.wombat .support_class {
+	color: #CAE682;
+}
+
+/* Library variable */
+pre.textmate-source.wombat .support_variable {
+	color: #CAE682;
+}
+
+/* Invalid */
+pre.textmate-source.wombat .invalid {
+	background-color: #E62424;
+}
+
+.codeexample {
+    float: left;
+    width: 50%;
+}
