@@ -77,11 +77,6 @@
 		TODO
 		call-by-name
 		currying
-		for comprehensions
-		String interpolation
-		lazy
-		call functions without .
-		duck typing
 		Option: Some, None
 		
 		future stuff:
@@ -98,7 +93,7 @@
 
 	<section>
 		<hgroup>
-	  	<h1>Background/Features</h1>
+	  	<h1>Features</h1>
 	  </hgroup>
 		<div class="scala codeexample">
 			<div class="action">
@@ -555,6 +550,13 @@ numbers.filter(_ % <span class="constant constant_numeric constant_numeric_scala
 <span class="keyword keyword_declaration keyword_declaration_stable keyword_declaration_stable_scala">val</span> <span class="entity entity_name entity_name_val entity_name_val_declaration">multiplyBy10</span> = multiply(<span class="variable variable_parameter">_</span>: <span class="entity entity_name entity_name_class">Int</span>, <span class="constant constant_numeric constant_numeric_scala">10</span>)
 
 numbers map multiplyBy10</span>
+
+<span class="source source_scala"><span class="keyword keyword_declaration keyword_declaration_scala">def</span> <span class="entity entity_name entity_name_function entity_name_function_declaration">currying</span>[<span class="entity entity_name entity_name_class">T</span>](<span class="variable variable_parameter">l</span>: <span class="entity entity_name entity_name_class">List</span>[<span class="entity entity_name entity_name_class">T</span>])(<span class="variable variable_parameter">f</span>: <span class="entity entity_name entity_name_class">T</span> =&gt; <span class="storage storage_type storage_type_primitive storage_type_primitive_scala">Unit</span>) = 
+    l.foreach(f(_))
+
+currying( <span class="entity entity_name entity_name_class">List</span>(<span class="constant constant_numeric constant_numeric_scala">1</span>,<span class="constant constant_numeric constant_numeric_scala">2</span>,<span class="constant constant_numeric constant_numeric_scala">3</span>) ) { <span class="variable variable_parameter">v</span>: <span class="entity entity_name entity_name_class">Int</span> =&gt;
+    println(v)
+}</span>
 				</pre>
 			</div>
 			<div class="groovy codeexample">
@@ -583,6 +585,14 @@ evenValues <span class="keyword keyword_operator keyword_operator_assignment key
 closures<span class="keyword keyword_operator keyword_operator_navigation keyword_operator_navigation_groovy">.</span>each {
     <span class="storage storage_type storage_type_groovy">Thread</span><span class="keyword keyword_operator keyword_operator_navigation keyword_operator_navigation_groovy">.</span>start it
 }</span>
+
+<span class="source source_groovy"><span class="meta meta_definition meta_definition_variable meta_definition_variable_groovy"><span class="storage storage_type storage_type_def storage_type_def_groovy">def</span> <span class="meta meta_definition meta_definition_variable meta_definition_variable_name meta_definition_variable_name_groovy">printDistance</span> <span class="keyword keyword_operator keyword_operator_assignment keyword_operator_assignment_groovy">=</span> {<span class="meta meta_closure meta_closure_parameters meta_closure_parameters_groovy"><span class="meta meta_closure meta_closure_parameter meta_closure_parameter_groovy"> <span class="variable variable_parameter variable_parameter_method variable_parameter_method_groovy">unit</span></span>,<span class="meta meta_closure meta_closure_parameter meta_closure_parameter_groovy"> <span class="variable variable_parameter variable_parameter_method variable_parameter_method_groovy">distance</span> </span></span><span class="keyword keyword_operator keyword_operator_groovy">-&gt;</span>
+    <span class="support support_function support_function_print support_function_print_groovy">println</span> <span class="string string_quoted string_quoted_double string_quoted_double_groovy"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_groovy">"</span>Distance is <span class="variable variable_other variable_other_interpolated variable_other_interpolated_groovy">$d<span class="variable variable_other variable_other_interpolated variable_other_interpolated_groovy">istance</span></span> <span class="variable variable_other variable_other_interpolated variable_other_interpolated_groovy">$u<span class="variable variable_other variable_other_interpolated variable_other_interpolated_groovy">nit</span></span><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_groovy">"</span></span>
+}</span>
+
+<span class="meta meta_definition meta_definition_variable meta_definition_variable_groovy"><span class="storage storage_type storage_type_def storage_type_def_groovy">def</span> <span class="meta meta_definition meta_definition_variable meta_definition_variable_name meta_definition_variable_name_groovy">printDistanceInKm</span> <span class="keyword keyword_operator keyword_operator_assignment keyword_operator_assignment_groovy">=</span> printDistance<span class="keyword keyword_operator keyword_operator_navigation keyword_operator_navigation_groovy">.</span><span class="meta meta_method-call meta_method-call_groovy"><span class="meta meta_method meta_method_groovy">curry</span><span class="punctuation punctuation_definition punctuation_definition_method-parameters punctuation_definition_method-parameters_begin punctuation_definition_method-parameters_begin_groovy">(</span><span class="string string_quoted string_quoted_single string_quoted_single_groovy"><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_groovy">'</span>km<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_end punctuation_definition_string_end_groovy">'</span></span><span class="punctuation punctuation_definition punctuation_definition_method-parameters punctuation_definition_method-parameters_end punctuation_definition_method-parameters_end_groovy">)</span></span></span>
+
+print<span class="meta meta_definition meta_definition_variable meta_definition_variable_groovy">DistanceInKm <span class="meta meta_definition meta_definition_variable meta_definition_variable_name meta_definition_variable_name_groovy">10</span></span></span>
 				</pre>
 			</div>
 		</section>
@@ -765,12 +775,12 @@ xml<span class="keyword keyword_operator keyword_operator_navigation keyword_ope
 			<div class="scala codeexample">
 				<h2>Scala</h2>
 				<li><a href="http://www.scala-lang.org/">Scala Language</a>
-				<li><a href="http://programming-scala.labs.oreilly.com/">Programming Scala</a>
+				<li><a href="http://programming-scala.labs.oreilly.com/">Programming Scala Book (free)</a>
 			</div>
 			<div class="groovy codeexample">
 				<h2>Groovy</h2>
-				<li>
-				<li>
+				<li><a href="http://groovy.codehaus.org/">Groovy Language</a>
+				<li><a href="http://www.amazon.com/Groovy-Recipes-Greasing-Pragmatic-Programmers/dp/0978739299/ref=sr_1_1?ie=UTF8&qid=1300839774&sr=8-1">Groovy Recipies Book</a>
 			</div>
 			<h2>Slides</h2>
 			<li> <a href="http://github.com/robflaherty/html-slideshow">Lightweight HTML5-based slideshow</a>
